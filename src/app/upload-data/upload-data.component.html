@@ -1,0 +1,24 @@
+<div class="container mt-5 p-5">
+
+    <div class="row bg-light">
+        <div class="col form-group p-4">
+            <h3 class="text-center">Upload Users Data</h3>
+            <input type="text" class="form-control" id="users" [(ngModel)]="usersUrl"  placeholder="https://www.google.com/">
+            <div class="text-center mt-3">
+                <button class="btn btn-success" (click)="onUploadUsers()" [disabled]="usersUrl == null">Upload Users</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="row bg-light mt-5">
+        <div class="col form-group p-4">
+            <h3 class="text-center">Upload Jobs Data</h3>
+            <input type="text" class="form-control" id="jobs" [(ngModel)]="jobsUrl"  placeholder="https://www.google.com/">
+            <div class="text-center mt-3">
+                <button class="btn btn-success" (click)="onUploadJobs()" [disabled]="jobsUrl == null">Upload Jobs</button>
+            </div>
+            
+        </div>
+    </div>
+
+</div>

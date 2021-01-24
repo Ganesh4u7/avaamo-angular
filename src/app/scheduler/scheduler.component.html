@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+
+<div class="container bg-light mt-5 p-5">
+<h1 class="text-center text-info">Scheduler</h1>
+    <div class="row mb-3">
+      <div class="col ">
+         <div class="col-6 float-left">
+            <input type="text"  class="form-control "  [(ngModel)]="searchText" (input)="onSearch(searchText)" placeholder="Filter by name">
+         </div>
+        <div class="float-right mr-5">
+            <button class="btn btn-danger"  (click)="newJob()" >+</button>
+        </div>
+    </div>
+    
+    </div>
+
+    
+        <div class="row mt-2 mb-3" >
+           <div  class="col" >
+             <div class="col float-left" *ngFor="let job of jobsDisplay;let i =index;">
+                 <div class=" float-left">
+                    <i class="fas fa-check mr-2 text-success"></i> 
+                      {{job.name}}
+                 </div>
+                
+                <div class=" float-right">
+                   <span *ngIf="job.status !== 'Paused'"> Healthy {{timeSince(job.created) }} ago</span> 
+                   <span *ngIf="job.status == 'Paused'"> Paused</span>
+                  <a (click)="onPause(job)" *ngIf="job.status !== 'Paused'">  <i class="fas fa-pause ml-3 text-primary" ></i></a>
+                  <a (click)="onResume(job)" *ngIf="job.status == 'Paused'">  <i class="fas fa-pause ml-3 text-warning"></i></a>
+                  <a>  <i class="fas fa-copy ml-3"></i></a>
+                  <a (click)="onDelete(job)">  <i class="fas fa-trash-alt ml-3 text-danger"></i></a>
+                </div>
+             
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+

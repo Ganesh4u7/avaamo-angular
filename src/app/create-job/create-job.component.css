@@ -1,0 +1,27 @@
+.totBody{
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100%;
+}
+
+.assert-bg{
+    background:rgb(214, 214, 214);
+}
+
+
+
+select{
+    font-size: 10px;
+}
+
+input{
+    font-size: 10px;
+}
+
+.createJob{
+    font-size: 14px;
+}
+
+a{
+    cursor: pointer;
+}

@@ -1,0 +1,36 @@
+nav{
+    position: sticky;
+    top: 0;
+    background: #0e1947;
+    z-index: 99999;
+}
+
+ul li{
+  outline: none;
+ 
+}
+ a{
+    color:#f7ae39;
+    cursor: pointer;
+  }
+  a :focus{
+    outline: none;
+  }
+
+.sticky{
+  position: fixed;
+  width: 100%;
+}
+
+.active{
+  background-color: #f7ae39;
+  color: #0e1947;
+  cursor: pointer;
+}
+.active  a{
+  color: #0e1947;
+}
+
+.active:hover{
+  background-color: white ;
+}
