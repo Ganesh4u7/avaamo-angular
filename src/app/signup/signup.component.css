@@ -11,7 +11,10 @@
 .container h2{
     color:rgb(216, 150, 27);
 }
-
+.container{
+    width: 60%;
+    border-radius: 5px;
+}
 .head-title{
     color:rgb(216, 150, 27);
     background: white;

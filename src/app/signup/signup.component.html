@@ -11,8 +11,9 @@
            </div>
             <label for="usr">Username</label>
             <input type="text" class="form-control" id="usr"
-             placeholder="" formControlName="name"
+             placeholder="" formControlName="name" minlength="4"
             required>
+            <span class=" text-danger" *ngIf="!signupForm.controls['name'].valid && signupForm.controls['name']?.touched"> Please enter a valid username of 4 characters</span>
         </div>
         <div class="form-group col-12  float-left">
             <label for="exampleFormControlSelect1">Role</label>
