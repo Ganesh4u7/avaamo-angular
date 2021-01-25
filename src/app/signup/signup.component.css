@@ -1,0 +1,21 @@
+.signupForm{
+    background: white;
+    margin-top: 50px;
+}
+
+.accType{
+    background: rgb(19, 19, 114);
+    
+    color: white;
+}
+.container h2{
+    color:rgb(216, 150, 27);
+}
+
+.head-title{
+    color:rgb(216, 150, 27);
+    background: white;
+    font-size: 70px;
+    font-weight: bold;
+
+} 

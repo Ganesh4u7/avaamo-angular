@@ -4,13 +4,15 @@ import { AuthGuard } from './auth.guard';
 import { CreateJobComponent } from './create-job/create-job.component';
 import { LoginComponent } from './login/login.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
+import { SignupComponent } from './signup/signup.component';
 import { UploadDataComponent } from './upload-data/upload-data.component';
 
 const routes: Routes = [
   {path:'scheduler',component:SchedulerComponent,canActivate:[AuthGuard]},
   {path:'create-job',component:CreateJobComponent,canActivate:[AuthGuard]},
   {path:'upload-data',component:UploadDataComponent,canActivate:[AuthGuard]},
-  {path:'',component:LoginComponent}
+  {path:'',component:LoginComponent},
+  {path:'signup',component:SignupComponent}
   
 ];
 

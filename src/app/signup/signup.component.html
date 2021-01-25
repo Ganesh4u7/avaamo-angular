@@ -1,0 +1,36 @@
+<div class="container mt-5 signupForm">
+    <form [formGroup]="signupForm" >
+    <div class="row  p-5 accType">
+        <div class="col text-right">
+            <button class="btn btn-primary" (click)="goToLogin()">Already a User ?</button>
+        </div>
+       
+        <div class="col-12 form-group float-left"> 
+            <div class=" text-center">
+                <h3 class="">SIGNUP</h3>
+           </div>
+            <label for="usr">Username</label>
+            <input type="text" class="form-control" id="usr"
+             placeholder="" formControlName="name"
+            required>
+        </div>
+        <div class="form-group col-12  float-left">
+            <label for="exampleFormControlSelect1">Role</label>
+            <select class="form-control" id="exampleFormControlSelect1" formControlName="type"
+            required>
+              <option value="ENDUSER">ENDUSER</option>
+              <option value="SUPPORTREP">SUPPORTREP</option>
+            </select>
+          </div>
+          <div class="col-12 text-center">
+            <button class="btn btn-success  mt-4 mb-4" [disabled]="!signupForm.valid" (click)="onSignup()">SIGNUP</button>
+        </div>
+        <div class="col-12 text-center">
+            <span class=" text-success  mt-3" *ngIf="signupStatus"> {{signupMesage}}</span>
+            <span class=" text-danger  mt-3" *ngIf="!signupStatus">{{signupMesage}}</span>
+         </div>
+        </div>
+        
+    </form>
+
+</div>

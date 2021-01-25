@@ -13,12 +13,9 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  signupForm:FormGroup;
 
   loginStatus =null;
-  signupStatus = null;
   loginMessage = null;
-  signupMesage = null;
 
   constructor( private httpService: HttpService,
                private dataService:DataServiceService,
@@ -31,10 +28,6 @@ export class LoginComponent implements OnInit {
     this.loginForm = new FormGroup({
       name: new FormControl(null)
     });
-    this.signupForm = new FormGroup({
-      name: new FormControl(null),
-      type: new FormControl(null)
-    })
   }
 
   onLogin(){
@@ -65,39 +58,9 @@ export class LoginComponent implements OnInit {
     );  
 
   }
-  onSignup(){
-    let userData = {
-      "photoUrl": null,
-      name: this.signupForm.value.name.toLowerCase(),
-      "label": null,
-      type: this.signupForm.value.type
-      };
 
-     // console.log(userData);
-
-    this.httpService.signup(userData).subscribe(
-      (response)=>{
-        // console.log(response)
-        if(response.status == true){
-         // console.log(response.payload);
-          this.signupStatus = true;
-          this.signupMesage = "User Registered Successfully";
-          this.dataService.userDetails = response.payload;
-          this.loginService.setLoggedin(true);
-          this.router.navigate(["/scheduler"]);
-        }
-        else{
-         // console.log(response);
-          this.signupStatus = false;
-          this.signupMesage = response.payload;
-        }
-      },
-      (error)=>{
-        //this.loginStatus = false;
-        console.log(error);
-      }
-    );  
-      
+  goToSignUp(){
+    this.router.navigate(['/signup']);
   }
 
 }
